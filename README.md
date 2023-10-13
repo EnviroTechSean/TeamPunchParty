@@ -3,6 +3,9 @@ Data200s Group project
 
 ## Links:
 
+### The project description page:
+https://ds100.org/fa23/gradproject/
+
 ### The google drive for dataset A originally provided to us
 https://drive.google.com/drive/folders/1AVzJyX7yv9RufLUbGUD6DUDXXUsfW5W4
 
@@ -16,4 +19,4 @@ https://docs.google.com/document/d/1ciCfkGh4PehvJ21IM3Me0dYCzw-nH7uvAwNrqsUQs6c/
 Originally copied from GHCN_data_preprocessing.ipynb in the dataset drive, we will likely tailor this to our needs. 
 
 ## Open questions:
-See the "Emmissions questions" tab of our open questions doc. We can talk about transferring those questions to this readme or whatever long term organization we want.
+See the "Emmissions questions" tab of the spreadsheet above. We can talk about transferring those questions to this readme or whatever long term organization we want.
