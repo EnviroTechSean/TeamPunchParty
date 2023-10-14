@@ -1,15 +1,26 @@
 # TeamPunchParty
 Data200s Group project
 
-## dataset_A_preprocessing.ipynb
-Originally copied from GHCN_data_preprocessing.ipynb, we will likely tailor this to our needs. 
+## Links:
+
+### The project description page:
+https://ds100.org/fa23/gradproject/
+
+### The google drive for dataset A originally provided to us
 https://drive.google.com/drive/folders/1AVzJyX7yv9RufLUbGUD6DUDXXUsfW5W4
+
+### Our spreadsheet of initially brainstormed questions
+https://docs.google.com/spreadsheets/d/1ntIW_GYvmMAgWO8m5aQh2oz8jWLRVaOj1m-uwFrHeok/edit#gid=113687052
+
+### Our document with our initial proposal
+https://docs.google.com/document/d/1ciCfkGh4PehvJ21IM3Me0dYCzw-nH7uvAwNrqsUQs6c/edit
 
 
 ## Below are the datasets in this repository
 ### us_air_quality_measures.csv
 This file contains air quality measures across different states/counties in the United States. There are ~219,000 entries.
 Columns are:
+
     - Measure ID
     - Measure name: name that specifies what type of measure was taken  (eg: "Number of days with maximum 8-hour average ozone concentration over the National Ambient Air Quality Standard," "Percent of days with PM2.5 levels over the National Ambient Air Quality Standard (monitor and modeled data)")
     - Measure type: eg Counts, Percent
@@ -27,6 +38,7 @@ Columns are:
 ### us_greenhouse_gas_emission_direct_emitter_gas_type.csv
 This file contains data about the location of emitter facilities and gas types emitted from each one. There are ~220,000 entries.
 Columns are:
+
     - V_GHG_EMITTER_GAS.ADDRESS1: Street address of facility
     - V_GHG_EMITTER_GAS.ADDRESS2: Street address line 2
     - V_GHG_EMITTER_GAS.CITY: City of facility
@@ -47,6 +59,7 @@ Columns are:
 ### us_greenhouse_gas_emission_direct_emitter_facilities.csv
 This file contains data about each facility, namely address, location, and IDs (FIPS, NAICS). There are ~77,000 entries.
 Columns are:
+
     - V_GHG_EMITTER_FACILITIES.ADDRESS1: Street address of facility
     - V_GHG_EMITTER_FACILITIES.ADDRESS2: Street address line 2
     - V_GHG_EMITTER_FACILITIES.CEMS_USED: this column is empty so I do not know what it is meant to describe
@@ -74,3 +87,9 @@ Columns are:
 2. There is quite a bit of redundant data between and within datasets. For example, There are two state columns (one containing full state name and the other containing the abbreviation). We can discuss dropping and merging later.
 3. If we are looking at air quality at different locations based on gas types and emission levels, the gas_types dataset may be (almost) sufficient, as the facilities dataset has no data about emissions, but may still be useful to add the parent company of each facility (if this si something we choose to explore).
 4. 
+
+## dataset_A_preprocessing.ipynb
+Originally copied from GHCN_data_preprocessing.ipynb in the dataset drive, we will likely tailor this to our needs. 
+
+## Open questions:
+See the "Emmissions questions" tab of the spreadsheet above. We can talk about transferring those questions to this readme or whatever long term organization we want.
