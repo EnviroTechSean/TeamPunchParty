@@ -20,6 +20,7 @@ https://docs.google.com/document/d/1ciCfkGh4PehvJ21IM3Me0dYCzw-nH7uvAwNrqsUQs6c/
 ### us_air_quality_measures.csv
 This file contains air quality measures across different states/counties in the United States. There are ~219,000 entries.
 Columns are:
+
     - Measure ID
     - Measure name: name that specifies what type of measure was taken  (eg: "Number of days with maximum 8-hour average ozone concentration over the National Ambient Air Quality Standard," "Percent of days with PM2.5 levels over the National Ambient Air Quality Standard (monitor and modeled data)")
     - Measure type: eg Counts, Percent
@@ -37,6 +38,7 @@ Columns are:
 ### us_greenhouse_gas_emission_direct_emitter_gas_type.csv
 This file contains data about the location of emitter facilities and gas types emitted from each one. There are ~220,000 entries.
 Columns are:
+
     - V_GHG_EMITTER_GAS.ADDRESS1: Street address of facility
     - V_GHG_EMITTER_GAS.ADDRESS2: Street address line 2
     - V_GHG_EMITTER_GAS.CITY: City of facility
@@ -57,6 +59,7 @@ Columns are:
 ### us_greenhouse_gas_emission_direct_emitter_facilities.csv
 This file contains data about each facility, namely address, location, and IDs (FIPS, NAICS). There are ~77,000 entries.
 Columns are:
+
     - V_GHG_EMITTER_FACILITIES.ADDRESS1: Street address of facility
     - V_GHG_EMITTER_FACILITIES.ADDRESS2: Street address line 2
     - V_GHG_EMITTER_FACILITIES.CEMS_USED: this column is empty so I do not know what it is meant to describe
