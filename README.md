@@ -1,9 +1,19 @@
 # TeamPunchParty
 Data200s Group project
 
-## dataset_A_preprocessing.ipynb
-Originally copied from GHCN_data_preprocessing.ipynb, we will likely tailor this to our needs. 
+## Links:
+
+### The project description page:
+https://ds100.org/fa23/gradproject/
+
+### The google drive for dataset A originally provided to us
 https://drive.google.com/drive/folders/1AVzJyX7yv9RufLUbGUD6DUDXXUsfW5W4
+
+### Our spreadsheet of initially brainstormed questions
+https://docs.google.com/spreadsheets/d/1ntIW_GYvmMAgWO8m5aQh2oz8jWLRVaOj1m-uwFrHeok/edit#gid=113687052
+
+### Our document with our initial proposal
+https://docs.google.com/document/d/1ciCfkGh4PehvJ21IM3Me0dYCzw-nH7uvAwNrqsUQs6c/edit
 
 
 ## Below are the datasets in this repository
@@ -74,3 +84,9 @@ Columns are:
 2. There is quite a bit of redundant data between and within datasets. For example, There are two state columns (one containing full state name and the other containing the abbreviation). We can discuss dropping and merging later.
 3. If we are looking at air quality at different locations based on gas types and emission levels, the gas_types dataset may be (almost) sufficient, as the facilities dataset has no data about emissions, but may still be useful to add the parent company of each facility (if this si something we choose to explore).
 4. 
+
+## dataset_A_preprocessing.ipynb
+Originally copied from GHCN_data_preprocessing.ipynb in the dataset drive, we will likely tailor this to our needs. 
+
+## Open questions:
+See the "Emmissions questions" tab of the spreadsheet above. We can talk about transferring those questions to this readme or whatever long term organization we want.
