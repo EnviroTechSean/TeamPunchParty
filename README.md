@@ -15,6 +15,9 @@ https://docs.google.com/spreadsheets/d/1ntIW_GYvmMAgWO8m5aQh2oz8jWLRVaOj1m-uwFrH
 ### Our document with our initial proposal
 https://docs.google.com/document/d/1ciCfkGh4PehvJ21IM3Me0dYCzw-nH7uvAwNrqsUQs6c/edit
 
+### Checkpoint 1 google doc writeup: 
+https://docs.google.com/document/d/1itRKmAqeMe8nCv4MViYwHv5UWHMZBcLGdagjyv1heYc/edit
+
 
 ## Below are the datasets in this repository
 ### us_air_quality_measures.csv
@@ -85,8 +88,7 @@ Columns are:
 ### A few things to note:
 1. The arrangement of columns is rather awkward. For example, the CO2 emission column is  between city and county columns in the gas_types dataset.
 2. There is quite a bit of redundant data between and within datasets. For example, There are two state columns (one containing full state name and the other containing the abbreviation). We can discuss dropping and merging later.
-3. If we are looking at air quality at different locations based on gas types and emission levels, the gas_types dataset may be (almost) sufficient, as the facilities dataset has no data about emissions, but may still be useful to add the parent company of each facility (if this si something we choose to explore).
-4. 
+3. If we are looking at air quality at different locations based on gas types and emission levels, the gas_types dataset may be (almost) sufficient, as the facilities dataset has no data about emissions, but may still be useful to add the parent company of each facility (if this is something we choose to explore).
 
 ## dataset_A_preprocessing.ipynb
 Originally copied from GHCN_data_preprocessing.ipynb in the dataset drive, we will likely tailor this to our needs. 
