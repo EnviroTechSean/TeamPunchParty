@@ -10,7 +10,7 @@ import csv
 
 # Let's view the first few columns of each dataframe to see what we are working with
 
-# In[19]:
+# In[3]:
 
 
 gas_types = pd.read_csv('us_greenhouse_gas_emission_direct_emitter_gas_type.csv')
@@ -31,16 +31,84 @@ gas_types = gas_types.rename(columns = {'V_GHG_EMITTER_GAS.YEAR': 'Year'})
 gas_types = gas_types.rename(columns = {'V_GHG_EMITTER_GAS.ZIP': 'Zip Code'})
 gas_types = gas_types.rename(columns = {'V_GHG_EMITTER_GAS.FACILITY_NAME': 'Facility Name'})
 gas_types = gas_types.rename(columns = {'V_GHG_EMITTER_GAS.COUNTY_FIPS': 'FIPS'})
-# MAKE ADDRESSES ALL UPPERCASE, THEN DROP ROWS WITH NO ADDRESS
-gas_types['Address Line 1'] = gas_types['Address Line 1'].str.upper()
+# MAKE STRINGS UPPERCASE SO SEARCHING IS EASIER IN THE FUTURE
+gas_types['City'] = gas_types['City'].str.upper()
+gas_types['County'] = gas_types['County'].str.upper()
+gas_types['Gas Code'] = gas_types['Gas Code'].str.upper()
+gas_types['Gas Name'] = gas_types['Gas Name'].str.upper()
+gas_types['Facility Name'] = gas_types['Facility Name'].str.upper()
+
+# DROPPED COLUMNS WITH NO DATA
 gas_types = gas_types.dropna(subset =['Address Line 1'] )
+
+# DROPPED COLUMNS WITH MANY MISSING VALUES OR DATA THAT IS NOT IDENTIFYING
+gas_types = gas_types.drop(columns = ['State', 'Address Line 2', 'FIPS'])
 
 gas_types.head()
 
 
 # The gas_type dataframe contains data about the location of emitter facilities and gas types emitted from each one. There are ~220,000 entries.
 
-# In[22]:
+# In[4]:
+
+
+air_quality = pd.read_csv('us_air_quality_measures.csv')
+air_quality.tail()
+
+
+# In[27]:
+
+
+import matplotlib.pyplot as plt
+
+
+# In[36]:
+
+
+display(air_quality["MeasureName"].unique())
+
+annual_avg = air_quality[air_quality["MeasureName"] == "Annual average ambient concentrations of PM2.5 in micrograms per cubic meter (based on seasonal averages and daily measurement)"]
+
+plt.figure(figsize=(12, 8))
+
+for state, group in grouped_averages.groupby("StateName"):
+    plt.plot(group["ReportYear"], group["Value"], label=state, marker="o")
+
+plt.title('Mean Value of PM2.5 Over Years by State')
+plt.ylabel('Mean Value of PM2.5')
+plt.xlabel('Year')
+plt.grid(True)
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', ncol=2) # Placing legend outside the plot for better visibility
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+
+# In[37]:
+
+
+display(air_quality["MeasureName"].unique())
+
+annual_avg = air_quality[air_quality["MeasureName"] == "Annual average ambient concentrations of PM 2.5 in micrograms per cubic meter, based on seasonal averages and daily measurement (monitor and modeled data)"]
+
+plt.figure(figsize=(12, 8))
+
+for state, group in grouped_averages.groupby("StateName"):
+    plt.plot(group["ReportYear"], group["Value"], label=state, marker="o")
+
+plt.title('Mean Value of PM2.5 Over Years by State')
+plt.ylabel('Mean Value of PM2.5')
+plt.xlabel('Year')
+plt.grid(True)
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', ncol=2) # Placing legend outside the plot for better visibility
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+
+
+# The air_quality dataframe contains air quality measures across different states/counties in the United States. It contains over 218,000 entries.
+
+# In[6]:
 
 
 facilities = pd.read_csv('us_greenhouse_gas_emissions_direct_emitter_facilities.csv')
@@ -72,29 +140,8 @@ facilities = facilities.dropna(subset =['Address Line 1'] )
 
 facilities.head()
 
+#add2_nan =facilities['Address Line 2'].isna().sum()
+#add2_nan
+
 
 # The facilities dataframe contains data about each facility, namely address, location, and IDs (FIPS, NAICS). There are ~77,000 rows.
-
-# In[5]:
-
-
-air_quality = pd.read_csv('us_air_quality_measures.csv')
-air_quality.tail()
-
-
-# The air_quality dataframe contains air quality measures across different states/counties in the United States. It contains over 218,000 entries.
-
-# In[24]:
-
-
-# Ran out of steam. Next step is to change all addresses to uppercase or lowercase so we can merge
-
-merged_gas_types_and_facilities = gas_types.merge(facilities, on = 'Address Line 1')
-merged_gas_types_and_facilities
-
-
-# In[ ]:
-
-
-
-
