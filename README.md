@@ -18,6 +18,8 @@ https://docs.google.com/document/d/1ciCfkGh4PehvJ21IM3Me0dYCzw-nH7uvAwNrqsUQs6c/
 ### Checkpoint 1 google doc writeup: 
 https://docs.google.com/document/d/1itRKmAqeMe8nCv4MViYwHv5UWHMZBcLGdagjyv1heYc/edit
 
+### Checkpoint 2 google doc writeup: 
+https://docs.google.com/document/d/1sE2sYOxgZfOL1DPZ-x_wRYHt0eBoZIv1RK-uFJ_Mp70/edit?usp=sharing
 
 ## Below are the datasets in this repository
 ### us_air_quality_measures.csv
