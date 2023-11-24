@@ -16,7 +16,7 @@ import urllib
 # In[ ]:
 
 
-get_ipython().run_cell_magic('bash', '', 'mkdir data_ghcn\ncd data_ghcn\nwget https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt\nwget https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/2021.csv.gz\ngzip -d 2021.csv.gz\n')
+get_ipython().run_cell_magic('bash', '', 'mkdir data_ghcn\ncd data_ghcn\nwget https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt\nwget https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/2021.csv.gz\ngzip -d 2021.csv.gz')
 
 
 # # Data Preprocessing
