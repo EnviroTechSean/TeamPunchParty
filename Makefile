@@ -6,4 +6,4 @@ PY_FILES = cp_exploredata.py exploredata.py modeling1.py
 # Then move all corresponding PY_FILES into the py_files directory
 convert_notebooks_to_py_files : 
 	for i in $(NOTEBOOKS); do jupyter nbconvert --to script $$i; done
-	for j in $(PY_FILES); do mv $$j py_files; done
+	for j in $(PY_FILES); do mv $$j py_notebook_copies; done
