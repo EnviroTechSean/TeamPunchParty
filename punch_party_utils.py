@@ -80,7 +80,7 @@ def make_gas_types_df(filename='us_greenhouse_gas_emission_direct_emitter_gas_ty
         'V_GHG_EMITTER_GAS.FACILITY_NAME': 'Facility Name',
         'V_GHG_EMITTER_GAS.COUNTY_FIPS': 'FIPS',
     }
-    gas_types = gas_types.rename(columns = gas_type_renames)
+    gas_types = gas_types.rename(columns=gas_type_renames)
 
     # MAKE STRINGS UPPERCASE SO SEARCHING IS EASIER IN THE FUTURE
     gas_types['City'] = gas_types['City'].str.upper()
@@ -98,3 +98,5 @@ def make_gas_types_df(filename='us_greenhouse_gas_emission_direct_emitter_gas_ty
     if not silent:
         print("gas_types.head():")
         print(gas_types.head())
+
+    return gas_types
