@@ -1,6 +1,6 @@
 import pandas as pd
 
-def make_air_quality_df(filename='us_air_quality_measures.csv', silent=True):
+def make_air_quality_df(filename='csv_data/us_air_quality_measures.csv', silent=True):
     air_quality = pd.read_csv(filename)
     # MAKE STATE AND COUNTY NAMES UPPERCASE
     air_quality['StateName'] = air_quality['StateName'].str.upper()
@@ -15,7 +15,7 @@ def make_air_quality_df(filename='us_air_quality_measures.csv', silent=True):
 
     return air_quality
 
-def make_facilities_df(filename='us_greenhouse_gas_emissions_direct_emitter_facilities.csv', silent=True):
+def make_facilities_df(filename='csv_data/us_greenhouse_gas_emissions_direct_emitter_facilities.csv', silent=True):
     facilities_df = pd.read_csv(filename)
 
     # RENAME ALL COLUMNS SO IT'S NOT SUCH AN EYESORE
@@ -58,7 +58,7 @@ def make_facilities_df(filename='us_greenhouse_gas_emissions_direct_emitter_faci
     return facilities_df
 
 
-def make_gas_types_df(filename='us_greenhouse_gas_emission_direct_emitter_gas_type.csv', silent=True):
+def make_gas_types_df(filename='csv_data/us_greenhouse_gas_emission_direct_emitter_gas_type.csv', silent=True):
     gas_types = pd.read_csv(filename)
 
     # RENAME ALL COLUMNS SO IT'S NOT SUCH AN EYESORE
