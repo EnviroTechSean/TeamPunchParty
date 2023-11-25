@@ -100,3 +100,8 @@ def make_gas_types_df(filename='csv_data/us_greenhouse_gas_emission_direct_emitt
         print(gas_types.head())
 
     return gas_types
+
+
+def make_average_aq_df():
+    air_quality_df = make_air_quality_df()
+    return air_quality_df[air_quality_df["MeasureType"] == "Average"]
