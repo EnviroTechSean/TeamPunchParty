@@ -47,8 +47,8 @@ facilities = punch_party_utils.make_facilities_df()
 
 
 # air quality rows where 'MeasureType' is average
-# we are doing this because other measure types contain a lot of 0s
-aq_avg = air_quality[air_quality['MeasureType'] == 'Average']
+
+aq_avg = punch_party_utils.make_average_aq_df()
 
 
 # The air quality dataframe has data from the years 1999 - 2013 while gas_types has data from 2010 - 2019. Let's use the year 2011 since both have a good amount of data for this year.
@@ -84,7 +84,6 @@ weston_aq_and_facilities
 # Do not run the cell below. It takes ~3.5 hours to produce the resulting dataframe. The code remains here for the sake of documentation and its output can be found in the file 'county-airq-num-facilities-with-none.csv'
 
 # In[13]:
-
 
 
 # create an empty DataFrame to store the results: air quality
@@ -174,7 +173,7 @@ county_aq_with_facilities['StateName'].value_counts()
 # We can answer this question using the air_quality and gas_types dataframes. We will use:
 # - aq measures from a particular gas type
 
-# In[24]:
+# In[14]:
 
 
 # air quality rows where 'MeasureType' is average
@@ -183,8 +182,24 @@ aq_avg = air_quality[air_quality['MeasureType'] == 'Average']
 # rename the county column in aq_avg so they have the same name and merging is easier
 aq_avg = aq_avg.rename(columns = {'CountyName': 'County'})
 
+# I'm still suspicious about their modeled values, going monitor only for my model
+# print(aq_avg["MeasureName"].unique())
 
+aq_avg_moniter_only = aq_avg[aq_avg["MeasureName"] == "Annual average ambient concentrations of PM2.5 in micrograms per cubic meter (based on seasonal averages and daily measurement)"]
+
+print(aq_avg_moniter_only["ReportYear"].unique())
+
+
+# The below comment seems wrong: only one of the plots below appears to specify 2011 interest.
+# 
 # The air quality dataframe has data from the years 1999 - 2013 while gas_types has data from 2010 - 2019. Let's use the year 2011 since both have a good amount of data for this year.
+
+# In[15]:
+
+
+print(gas_types.columns)
+aq_avg_moniter_only.groupby(["ReportYear, Facility ID"])
+
 
 # In[25]:
 
