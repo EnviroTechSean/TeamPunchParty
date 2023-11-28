@@ -97,7 +97,7 @@ def make_gas_types_df(filename='csv_data/us_greenhouse_gas_emission_direct_emitt
 
     if not silent:
         print("gas_types.head():")
-        print(gas_types.head())
+        display(gas_types.head())
 
     return gas_types
 
