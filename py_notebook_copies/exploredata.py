@@ -72,7 +72,7 @@ weston_aq_2011 = aq_avg[(aq_avg['CountyName'] == 'WESTON') & (aq_avg['ReportYear
 # gas_types rows where Weston is county and year is 2011
 weston_gas_2011 = gas_types[(gas_types['County'] == 'WESTON') & (gas_types['Year'] == 2011)]
 # get number of facilities in that county and year
-num_weston_facilities = weston_gas_2011['Facility Name'].nunique()
+num_weston_facilities = weston_gas_2011['Facility'].nunique()
 
 # add number of facilities column to weston_aq
 #weston_aq['NumFacilities'] = num_weston_facilities
@@ -84,6 +84,7 @@ weston_aq_and_facilities
 # Do not run the cell below. It takes ~3.5 hours to produce the resulting dataframe. The code remains here for the sake of documentation and its output can be found in the file 'county-airq-num-facilities-with-none.csv'
 
 # In[13]:
+
 
 
 # create an empty DataFrame to store the results: air quality
@@ -145,7 +146,7 @@ print(f'The number of non-zero values in the NumFacilities column is {len(county
 
 # The next time this notebook was loaded, county_aq_with_facilities was read from the CSV it was saved to last time
 
-# In[19]:
+# In[37]:
 
 
 # read from csv to continue working
@@ -156,7 +157,7 @@ county_aq_with_facilities.head()
 
 # Finally, let's make a scatter plot to visualize the relationship between number of facilities and air quality measure values.
 
-# In[20]:
+# In[36]:
 
 
 sns.scatterplot(x = "NumFacilities", y = "Value", data=county_aq_with_facilities)
