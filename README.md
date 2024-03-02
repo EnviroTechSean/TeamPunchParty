@@ -1,6 +1,8 @@
 # TeamPunchParty
 Data200s Group project
 
+In this project, we combined data analysis and machine learning techniques to model air quality across various US counties. Using Python libraries NumPy, Pandas, seaborn, matplotlib, and scikit-learn, our team constructed two linear regression models and successfully conducted a comprehensive analysis of emission data. 
+
 ## Links:
 
 ### The project description page:
